@@ -58,17 +58,26 @@ export default function CountdownPage() {
             <Card className="w-full h-full p-10">
               <CardHeader>
                 <CardTitle>naice</CardTitle>
-                <CardDescription>a counter till Wednesday, November 10, 2190, 18:56:09 GMT</CardDescription>
+                <CardDescription>
+                  a counter till Wednesday, November 10, 2190, 18:56:09 GMT
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <Card className="w-full h-full p-10">
                   <Tabs defaultValue="complete" className="w-full">
                     <TabsContent value="complete">
+                      <Card>this is a card</Card>
                       for the remaining time in complete form (days-hours-minutes-seconds){" "}
                     </TabsContent>
-                    <TabsContent value="hours">for the remaining time in hours</TabsContent>
-                    <TabsContent value="minutes">for the remaining time in minutes</TabsContent>
-                    <TabsContent value="seconds">for the remaining time in seconds</TabsContent>
+                    <TabsContent value="hours">
+                      <Card>this is a card</Card>for the remaining time in hours
+                    </TabsContent>
+                    <TabsContent value="minutes">
+                      <Card>this is a card</Card>for the remaining time in minutes
+                    </TabsContent>
+                    <TabsContent value="seconds">
+                      <Card>this is a card</Card>for the remaining time in seconds
+                    </TabsContent>
                     <TabsList>
                       <TabsTrigger value="complete">complete</TabsTrigger>
                       <TabsTrigger value="hours">Hours</TabsTrigger>

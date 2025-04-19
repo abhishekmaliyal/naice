@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ModeToggle } from "@/components/theme/darkmode";
 
 export default function CountdownPage() {
   const [timeRemaining, setTimeRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -62,39 +63,72 @@ export default function CountdownPage() {
                   a counter till Wednesday, November 10, 2190, 18:56:09 GMT
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="w-full h-full">
                 <Card className="w-full h-full p-10">
-                  <Tabs defaultValue="complete" className="w-full">
-                    <TabsContent value="complete">
-                      <Card>this is a card</Card>
-                      for the remaining time in complete form (days-hours-minutes-seconds){" "}
+                  <Tabs defaultValue="complete" className="w-full h-full">
+                    <TabsContent value="complete" className="w-full h-full">
+                      <Card className="time h-full w-full p-10 grid grid-cols-4">
+                        <Card className="d flex items-center justify-center text-6xl">
+                          <div className="days">{timeRemaining.days}</div>
+                        </Card>
+                        <Card className="hr flex items-center justify-center text-6xl">
+                          <div className="hours">{timeRemaining.hours}</div>
+                        </Card>
+                        <Card className="min flex items-center justify-center text-6xl">
+                          <div className="minutes">{timeRemaining.minutes}</div>
+                        </Card>
+                        <Card className="sec flex items-center justify-center text-6xl">
+                          <div className="seconds">{timeRemaining.seconds}</div>
+                        </Card>
+                      </Card>
                     </TabsContent>
-                    <TabsContent value="hours">
-                      <Card>this is a card</Card>for the remaining time in hours
+                    <TabsContent value="hours" className="w-full h-full">
+                      <Card className="time h-full w-full p-10">this is a card</Card>
                     </TabsContent>
-                    <TabsContent value="minutes">
-                      <Card>this is a card</Card>for the remaining time in minutes
+                    <TabsContent value="minutes" className="w-full h-full">
+                      <Card className="time h-full w-full p-10">this is a card</Card>
                     </TabsContent>
-                    <TabsContent value="seconds">
-                      <Card>this is a card</Card>for the remaining time in seconds
+                    <TabsContent value="seconds" className="w-full h-full">
+                      <Card className="time h-full w-full p-10">this is a card</Card>
                     </TabsContent>
-                    <TabsList>
-                      <TabsTrigger value="complete">complete</TabsTrigger>
-                      <TabsTrigger value="hours">Hours</TabsTrigger>
-                      <TabsTrigger value="minutes">Minutes</TabsTrigger>
-                      <TabsTrigger value="seconds">Seconds</TabsTrigger>
+                    <TabsList className="gap-4 bg-transparent py-10">
+                      <TabsTrigger
+                        value="complete"
+                        className="h-10 w-24 data-[state=inactive]:bg-gray-100"
+                      >
+                        complete
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="hours"
+                        className="h-10 w-24 data-[state=inactive]:bg-gray-100"
+                      >
+                        Hours
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="minutes"
+                        className="h-10 w-24 data-[state=inactive]:bg-gray-100"
+                      >
+                        Minutes
+                      </TabsTrigger>
+                      <TabsTrigger
+                        value="seconds"
+                        className="h-10 w-24 data-[state=inactive]:bg-gray-100"
+                      >
+                        Seconds
+                      </TabsTrigger>
                     </TabsList>
                   </Tabs>
                 </Card>
               </CardContent>
               <CardFooter>
-                <p>made with 🖤 by Abhishek Maliyal</p>
+                <div className="credit flex w-full h-full items-center justify-start">
+                  <p>made with 🖤 by Abhishek Maliyal</p>
+                </div>
+                <div className="mode flex w-full h-full items-center justify-end">
+                  <ModeToggle />
+                </div>
               </CardFooter>
             </Card>
-            {/* <div className="days">{timeRemaining.days}</div>
-          <div className="hours">{timeRemaining.hours}</div>
-          <div className="minutes">{timeRemaining.minutes}</div>
-          <div className="seconds">{timeRemaining.seconds}</div> */}
           </Card>
         </div>
       </div>

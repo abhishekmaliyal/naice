@@ -13,7 +13,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ModeToggle } from "@/components/theme/darkmode";
 
 export default function CountdownPage() {
-  const [timeRemaining, setTimeRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeRemaining, setTimeRemaining] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    inHours: 0,
+    inMinutes: 0,
+    inSeconds: 0,
+  });
 
   useEffect(() => {
     function calculateRemainingTime() {
@@ -21,7 +29,6 @@ export default function CountdownPage() {
       const currentUTCSeconds = Math.floor(Date.now() / 1000);
 
       let remainingSeconds = futureUTCSeconds - currentUTCSeconds;
-
       if (remainingSeconds <= 0) {
         return { days: 0, hours: 0, minutes: 0, seconds: 0 };
       }
@@ -34,11 +41,18 @@ export default function CountdownPage() {
       remainingSeconds -= minutes * 60;
       const seconds = Math.floor(remainingSeconds);
 
+      const inHours = days * 24 + hours;
+      const inMinutes = inHours * 60 + minutes;
+      const inSeconds = inMinutes * 60 + seconds;
+
       return {
         days,
         hours,
         minutes,
         seconds,
+        inHours,
+        inMinutes,
+        inSeconds,
       };
     }
 
@@ -82,15 +96,31 @@ export default function CountdownPage() {
                         </Card>
                       </Card>
                     </TabsContent>
+
                     <TabsContent value="hours" className="w-full h-full">
-                      <Card className="time h-full w-full p-10">this is a card</Card>
+                      <Card className="time h-full w-full p-10 text-6xl">
+                        <div className="hours border rounded-xl border-gray-500 w-full h-full flex items-center justify-center">
+                          {timeRemaining.inHours}
+                        </div>
+                      </Card>
                     </TabsContent>
+
                     <TabsContent value="minutes" className="w-full h-full">
-                      <Card className="time h-full w-full p-10">this is a card</Card>
+                      <Card className="time h-full w-full p-10 text-6xl">
+                        <div className="minutes border rounded-xl border-gray-500 w-full h-full flex items-center justify-center">
+                          {timeRemaining.inMinutes}
+                        </div>
+                      </Card>
                     </TabsContent>
+
                     <TabsContent value="seconds" className="w-full h-full">
-                      <Card className="time h-full w-full p-10">this is a card</Card>
+                      <Card className="time h-full w-full p-10 text-6xl">
+                        <div className="seconds border rounded-xl border-gray-500 w-full h-full flex items-center justify-center">
+                          {timeRemaining.inSeconds}
+                        </div>
+                      </Card>
                     </TabsContent>
+
                     <TabsList className="gap-4 bg-transparent py-10">
                       <TabsTrigger
                         value="complete"

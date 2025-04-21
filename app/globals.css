@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+.title{
+font-family: var(--font-silkscreen);
+font-style: normal;
+font-weight: normal;
+}
+
+.description, .darkmode, .credit, .trigger{
+  font-family: var(--font-funnel);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.days, .hours, .minutes, .seconds {
+  font-family: var(--font-gothic);
+  font-style: normal;
+  font-weight: normal;
+}

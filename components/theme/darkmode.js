@@ -29,7 +29,7 @@ export function ModeToggle() {
       <div className="darkmode h-full w-full flex items-center justify-center">
         <button
           aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-          className="darkmode select-none cursor-crosshair font-medium transition-colors hover:text-primary/80 h-12 w-40 border rounded-xl border-gray-500"
+          className="darkmode text-lg select-none cursor-crosshair font-bold transition-colors hover:text-primary/80 h-12 w-40 border rounded-xl border-gray-500"
           onClick={toggleTheme}
         >
           {isDarkMode ? "light mode." : "dark mode."}

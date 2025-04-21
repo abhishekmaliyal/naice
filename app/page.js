@@ -72,9 +72,11 @@ export default function CountdownPage() {
           <Card className="w-full h-full p-10">
             <Card className="w-full h-full p-10">
               <CardHeader>
-                <CardTitle>naice</CardTitle>
+                <CardTitle><p className="title">naice</p></CardTitle>
                 <CardDescription>
+                  <p className="description">
                   a counter till Wednesday, November 10, 2190, 18:56:09 GMT
+                  </p>
                 </CardDescription>
               </CardHeader>
               <CardContent className="w-full h-full">
@@ -152,7 +154,7 @@ export default function CountdownPage() {
               </CardContent>
               <CardFooter>
                 <div className="credit flex w-full h-full items-center justify-start">
-                  <p>made with 🖤 by Abhishek Maliyal</p>
+                  <p className="credit">made with 🖤 by Abhishek Maliyal</p>
                 </div>
                 <div className="mode flex w-full h-full items-center justify-end">
                   <ModeToggle />

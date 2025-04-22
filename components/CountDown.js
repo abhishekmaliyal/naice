@@ -20,7 +20,7 @@ export default function CountdownPage() {
         <div className="timer p-10 w-full h-full">
           <Card className="w-full h-full p-10">
             <Card className="w-full h-full p-10">
-              <CardHeader>
+              <CardHeader className="cursor-[url('/nice.png'),_pointer]">
                 <CardTitle>
                   <p className="title text-5xl">naice</p>
                 </CardTitle>
@@ -103,8 +103,8 @@ export default function CountdownPage() {
                   </Tabs>
                 </Card>
               </CardContent>
-              <CardFooter>
-                <div className="credit flex w-full h-full items-center justify-start">
+              <CardFooter className="cursor-[url('/nice.png'),_pointer]">
+                <div className="credit flex w-full h-full items-center justify-start ">
                   <p className="credit text-lg">
                     made with 🖤 by <span className="title"> Abhishek Maliyal</span>
                   </p>

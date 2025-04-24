@@ -8,8 +8,8 @@ import Main from "./ui/Main";
 export default function CountdownPage() {
   return (
     <>
-      <div className="contain p-10 w-screen h-screen">
-        <Card className="w-full h-full p-10">
+      <div className="contain lg:p-10 w-screen h-screen">
+        <Card className="w-full h-full lg:p-10">
           <Header />
           <Main />
           <Footer />

@@ -6,8 +6,9 @@ export default function TotalSeconds() {
   const timeRemaining = useTime();
   return (
     <>
-      <Card className="time h-full w-full p-10 text-6xl">
-        <div className="seconds border rounded-xl border-gray-500 w-full h-full flex items-center justify-center">
+      <Card className="time h-full w-full lg:p-10 p-2 lg:text-6xl text-4xl">
+        <div className="seconds border rounded-xl border-gray-500 w-full h-full flex flex-col items-center justify-center">
+          <div className="description text-lg flex justify-center">seconds : </div>
           {timeRemaining.inSeconds}
         </div>
       </Card>

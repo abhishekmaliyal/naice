@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <>
       <CardContent className="w-full h-full">
-        <Card className="w-full h-full p-10">
+        <Card className="w-full h-full lg:p-10 p-2">
           <Tabs defaultValue="complete" className="w-full h-full">
             <AllContent />
             <AllTabs />

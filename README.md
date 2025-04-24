@@ -3,7 +3,7 @@
 
 🗓 **Wednesday, November 10, 2190 – 18:56:09 GMT** (UTC Timestamp: `6969696969`)
 
-🔗 **Live Demo:** [naice.netlify.app](https://naice.netlify.app)
+🔗 **Live :** [naice.netlify.app](https://naice.netlify.app)
 
 ---
 
